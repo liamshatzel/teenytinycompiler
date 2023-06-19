@@ -1,5 +1,6 @@
 from lex import *
 from parse import *
+from emit import *
 import sys
 
 def main():
@@ -7,13 +8,16 @@ def main():
     
     if len(sys.argv) != 2:
             sys.exit("Error: Compiler needs source file as argument.")
-    with open(sys.argv[1], 'r') as inputFile:
-            source = inputFile.read()
-         
+    with open(sys.argv[1], 'r') as input_file:
+            source = input_file.read()
+    
+    #lexer, emitter, parser         
     lexer = Lexer(source)
-    parser = Parser(lexer) 
+    emitter = Emitter("out.c")
+    parser = Parser(lexer, emitter) 
     
     parser.program() #start parser
-    print("Parsing complete")
-
+    emitter.write_file()    
+    print("Compiling Complete")
+    
 main()
