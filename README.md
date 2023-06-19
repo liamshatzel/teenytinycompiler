@@ -5,24 +5,22 @@ Compiles to C
 
 Supports the following:
 ## Assignment
-LET foo = bar
+`LET foo = bar`
 
 ## Conditionals
-IF condition THEN
+`IF condition THEN
   statement
-ENDIF
+ENDIF`
 
 ## Looping
-WHILE condition REPEAT
+`WHILE condition REPEAT
   statement
-ENDWHILE
+ENDWHILE`
 
 ## Print
-PRINT "text"
+`PRINT "text"`
 
 
-## Label
-LABEL foo
-
-## GOTO
-GOTO foo
+## Label and GOTO
+`LABEL foo`
+`GOTO foo`
